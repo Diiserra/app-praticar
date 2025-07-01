@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-praticar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-praticar
+  template:
+    metadata:
+      labels:
+        app: app-praticar
+    spec:
+      containers:
+        - name: app-praticar
+          image: diiserras/app-praticar:latest # Substitua pelo seu usuário Docker Hub
+          ports:
+            - containerPort: 9090
